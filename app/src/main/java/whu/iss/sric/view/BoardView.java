@@ -28,7 +28,7 @@ public class BoardView extends View {
 	/**
 	 * yCount y�᷽���ͼ����+1
 	 */
-	protected static final int  yCount =12;
+	protected static final int  yCount =4;
 	/**
 	 * map ��������Ϸ����
 	 */

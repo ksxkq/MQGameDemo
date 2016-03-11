@@ -43,22 +43,20 @@ public class XiaomiReceiver extends PushMessageReceiver {
 //        } else if (!TextUtils.isEmpty(message.getAlias())) {
 //            mAlias = message.getAlias();
 //        }
-
-
-        Intent intent = new Intent(context, WelActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
     }
 
 
     @Override
     public void onNotificationMessageClicked(Context context, MiPushMessage message) {
-        mMessage = message.getContent();
-        if (!TextUtils.isEmpty(message.getTopic())) {
-            mTopic = message.getTopic();
-        } else if (!TextUtils.isEmpty(message.getAlias())) {
-            mAlias = message.getAlias();
-        }
+//        mMessage = message.getContent();
+//        if (!TextUtils.isEmpty(message.getTopic())) {
+//            mTopic = message.getTopic();
+//        } else if (!TextUtils.isEmpty(message.getAlias())) {
+//            mAlias = message.getAlias();
+//        }
+        Intent intent = new Intent(context, WelActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
 

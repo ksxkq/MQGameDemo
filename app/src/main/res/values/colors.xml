@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#17c7d1</color>
-    <color name="colorPrimaryDark">#17c7d1</color>
-    <color name="colorAccent">#19ec8b</color>
+    <color name="colorPrimary">#fca827</color>
+    <color name="colorPrimaryDark">@color/colorPrimary</color>
+
     <color name="red">#fc511f</color>
+    <color name="red_trans">#b3fc511f</color>
+    <color name="orange">#fd9026</color>
+    <color name="orange_tans">#b3fd9026</color>
+    <color name="black">#505456</color>
+    <color name="gray">#c0c0c0</color>
+
+    <color name="black_middle">#858990</color>
+    <color name="black_light">#c0c0c0</color>
+    <color name="black_dark">#505456</color>
+
+
+    <!--通过覆盖资源id的形式自定义美洽UI START-->
+    <color name="mq_colorPrimary">@color/colorPrimary</color>
+    <color name="mq_colorPrimaryDark">@color/colorPrimaryDark</color>
+
+    <color name="mq_activity_title_textColor">@android:color/white</color>
+    <color name="mq_activity_title_bg">@color/colorPrimary</color>
+
+    <!--<color name="mq_chat_left_textColor">@android:color/white</color>-->
+    <color name="mq_chat_right_textColor">@android:color/white</color>
+
+    <!--<color name="mq_chat_left_bubble">#00ce7d</color>-->
+    <color name="mq_chat_right_bubble">@color/colorPrimary</color>
+    <!--通过覆盖资源id的形式自定义美洽UI END-->
 </resources>

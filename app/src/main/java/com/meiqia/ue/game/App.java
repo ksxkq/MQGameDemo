@@ -54,10 +54,11 @@ public class App extends Application implements Application.ActivityLifecycleCal
                 Toast.makeText(App.getInstance(), "init failure", Toast.LENGTH_SHORT).show();
             }
         });
-        MQConfig.backArrowIconResId = R.drawable.mq_ic_back_white;
-        MQConfig.bgColorTitle = R.color.colorPrimary;
-        MQConfig.textColorTitle = android.R.color.white;
-        MQConfig.titleGravity = MQConfig.MQTitleGravity.LEFT;
+        MQConfig.ui.backArrowIconResId = R.drawable.mq_ic_back_white;
+        MQConfig.ui.titleBackgroundResId = R.color.orange;
+        MQConfig.ui.rightChatBubbleColorResId = R.color.orange;
+        MQConfig.ui.titleTextColorResId = android.R.color.white;
+        MQConfig.ui.titleGravity = MQConfig.ui.MQTitleGravity.LEFT;
     }
 
     private void initMQ(OnInitCallback onInitCallback) {
