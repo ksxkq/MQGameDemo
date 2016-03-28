@@ -24,7 +24,7 @@ import android.widget.TextView;
 
 import com.meiqia.core.MQMessageManager;
 import com.meiqia.meiqiasdk.util.MQUtils;
-import com.meiqia.ue.game.MyMQConversation;
+import com.meiqia.ue.game.MyMQConversationActivity;
 import com.meiqia.ue.game.R;
 import com.meiqia.ue.game.SPUtil;
 
@@ -196,8 +196,14 @@ public class WelActivity extends Activity
         if (KeyEvent.KEYCODE_BACK == keyCode && btnPlay.getVisibility() != View.VISIBLE) {
             replayGame();
             return false;
+        } else {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);// 注意
+            intent.addCategory(Intent.CATEGORY_HOME);
+            this.startActivity(intent);
+            return false;
         }
-        return super.onKeyUp(keyCode, event);
+//        return super.onKeyUp(keyCode, event);
     }
 
     @Override
@@ -266,7 +272,7 @@ public class WelActivity extends Activity
         if (EasyPermissions.hasPermissions(this, perms)) {
             // 跳转到聊天界面前，先清空当前界面统计的未读消息数，取消监听新消息的广播
             clearCount();
-            Intent intent = new Intent(WelActivity.this, MyMQConversation.class);
+            Intent intent = new Intent(WelActivity.this, MyMQConversationActivity.class);
             startActivity(intent);
         } else {
             EasyPermissions.requestPermissions(this, getString(R.string.mq_runtime_permission_tip), REQUEST_CODE_CONVERSATION_PERMISSIONS, perms);

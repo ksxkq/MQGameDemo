@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.meiqia.ue.game.App;
+import com.meiqia.ue.game.MyMQConversationActivity;
 import com.xiaomi.mipush.sdk.ErrorCode;
 import com.xiaomi.mipush.sdk.MiPushClient;
 import com.xiaomi.mipush.sdk.MiPushCommandMessage;
@@ -13,8 +14,6 @@ import com.xiaomi.mipush.sdk.MiPushMessage;
 import com.xiaomi.mipush.sdk.PushMessageReceiver;
 
 import java.util.List;
-
-import whu.iss.sric.android.WelActivity;
 
 /**
  * OnePiece
@@ -54,8 +53,11 @@ public class XiaomiReceiver extends PushMessageReceiver {
 //        } else if (!TextUtils.isEmpty(message.getAlias())) {
 //            mAlias = message.getAlias();
 //        }
-        Intent intent = new Intent(context, WelActivity.class);
+        Intent intent = new Intent(context, MyMQConversationActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (App.getInstance().getActivityCount() == 2) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+        }
         context.startActivity(intent);
     }
 

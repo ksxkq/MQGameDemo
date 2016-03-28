@@ -20,6 +20,7 @@ import com.xiaomi.mipush.sdk.MiPushClient;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
 /**
  * OnePiece
@@ -30,6 +31,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
     private static final int BACKGROUND = 0;
     private static App sInstance;
     private int mActivityState = BACKGROUND;
+    private Stack<Activity> mActivityStack = new Stack<>();
 
     @Override
     public void onCreate() {
@@ -130,6 +132,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+        mActivityStack.add(activity);
     }
 
     @Override
@@ -166,6 +169,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
 
     @Override
     public void onActivityDestroyed(Activity activity) {
+        mActivityStack.remove(activity);
     }
 
     public boolean isAppBackground() {
@@ -196,5 +200,9 @@ public class App extends Application implements Application.ActivityLifecycleCal
                 Toast.makeText(App.getInstance(), "init failure", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public int getActivityCount() {
+        return mActivityStack.size();
     }
 }

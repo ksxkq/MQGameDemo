@@ -37,7 +37,7 @@
         </activity>
 
         <activity
-            android:name=".MyMQConversation"
+            android:name=".MyMQConversationActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTop"
             android:screenOrientation="landscape"
