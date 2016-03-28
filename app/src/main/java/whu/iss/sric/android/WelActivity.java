@@ -305,6 +305,7 @@ public class WelActivity extends Activity
                 int msgCount = SPUtil.getInt("msg_count");
                 msgCount = msgCount + 1;
                 SPUtil.putInt("msg_count", msgCount);
+                Log.d("debug", "kkkkk reveive");
                 addMessageCount(msgCount > 99 ? "99+" : String.valueOf(msgCount));
             }
         }

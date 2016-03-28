@@ -63,6 +63,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
 
     private void initMQ(OnInitCallback onInitCallback) {
         MQManager.init(this, "bf225f4dbdc3d413fc8fd5f94dd66bc5", onInitCallback);
+        MQManager.setDebugMode(true);
     }
 
     private void initMiPush() {
