@@ -196,14 +196,14 @@ public class WelActivity extends Activity
         if (KeyEvent.KEYCODE_BACK == keyCode && btnPlay.getVisibility() != View.VISIBLE) {
             replayGame();
             return false;
-        } else {
+        } else if (KeyEvent.KEYCODE_BACK == keyCode) {
             Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);// 注意
             intent.addCategory(Intent.CATEGORY_HOME);
             this.startActivity(intent);
             return false;
         }
-//        return super.onKeyUp(keyCode, event);
+        return super.onKeyUp(keyCode, event);
     }
 
     @Override
