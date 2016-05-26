@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.meiqia.core.MQManager;
 import com.meiqia.core.callback.OnClientInfoCallback;
 import com.meiqia.core.callback.OnInitCallback;
+import com.meiqia.meiqiasdk.uilimageloader.UILImageLoader;
 import com.meiqia.meiqiasdk.util.MQConfig;
 import com.xiaomi.channel.commonutils.logger.LoggerInterface;
 import com.xiaomi.mipush.sdk.Logger;
@@ -64,7 +65,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
     }
 
     private void initMQ(OnInitCallback onInitCallback) {
-        MQManager.init(this, "bf225f4dbdc3d413fc8fd5f94dd66bc5", onInitCallback);
+        MQConfig.init(this, "0dc23d8617307fd1f67b520ae913d3f1", new UILImageLoader(), null);
         MQManager.setDebugMode(true);
     }
 

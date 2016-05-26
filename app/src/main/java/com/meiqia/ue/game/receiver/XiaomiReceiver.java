@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.meiqia.ue.game.App;
 import com.meiqia.ue.game.MyMQConversationActivity;
+import com.meiqia.ue.game.SPUtil;
 import com.xiaomi.mipush.sdk.ErrorCode;
 import com.xiaomi.mipush.sdk.MiPushClient;
 import com.xiaomi.mipush.sdk.MiPushCommandMessage;
@@ -131,6 +132,7 @@ public class XiaomiReceiver extends PushMessageReceiver {
 
 
                 App.getInstance().uploadPushId(mRegId);
+                SPUtil.putString("mq_customizd_id", mRegId);
             }
         }
     }

@@ -23,6 +23,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.meiqia.core.MQMessageManager;
+import com.meiqia.meiqiasdk.util.MQIntentBuilder;
 import com.meiqia.meiqiasdk.util.MQUtils;
 import com.meiqia.ue.game.MyMQConversationActivity;
 import com.meiqia.ue.game.R;
@@ -272,7 +273,9 @@ public class WelActivity extends Activity
         if (EasyPermissions.hasPermissions(this, perms)) {
             // 跳转到聊天界面前，先清空当前界面统计的未读消息数，取消监听新消息的广播
             clearCount();
-            Intent intent = new Intent(WelActivity.this, MyMQConversationActivity.class);
+            Intent intent = new MQIntentBuilder(this,MyMQConversationActivity.class)
+                    .setCustomizedId(SPUtil.getString("mq_customizd_id"))
+                    .build();
             startActivity(intent);
         } else {
             EasyPermissions.requestPermissions(this, getString(R.string.mq_runtime_permission_tip), REQUEST_CODE_CONVERSATION_PERMISSIONS, perms);
